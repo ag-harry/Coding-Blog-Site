@@ -1,0 +1,499 @@
+/* Universal Selector (*) applies values/elements to every
+single element on the page. No inheritance involved */
+/* 
+* {
+
+} 
+*/
+
+/* Universal selector */
+* {
+    /* GLOBAL RESET */
+    margin: 0;
+    padding: 0;
+    /* BOX-SIZING: BORDER-BOX; is not inherited which is why it is 
+    put in the universal selector. This property cannot be
+    used on body because it isnt inherited. */
+    box-sizing: border-box;
+}
+
+/* Parent Element */
+body {
+    color: #444;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.container {
+    width: 2000px;
+    margin: 0 auto;
+    /* like btn example */
+    /* position: relative; */
+}
+
+/* Nav bar contents with H1 */
+nav {
+    font-size: 18px;
+    padding: 3px;
+}
+
+a {
+    padding-right: 4px;
+}
+
+a:last-child {
+    padding-right: 0;
+}
+
+.main-header {
+    background-color: #f7f7f7;
+
+    /* FLOAT bg coior */
+    padding: 15px 30px;
+    /* margin-bottom: 30px; */
+}
+
+
+article {
+    margin-bottom: 20px;
+}
+
+.post-header {
+    margin-bottom: 30px;
+    /* position: relative; */
+}
+
+/* element selectors use name only */
+aside {
+    background-color: #f7f7f7;
+    border-top: 3px solid #0eb5f7;
+    border-bottom: 3px solid #0eb5f7;
+    padding: 25px 0;
+}
+
+/* SMALLER ELEMENTS */
+h1,
+h2,
+h3 {
+    color: #0eb5f7;
+}
+
+h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: 8px;
+}
+
+h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+ul,
+ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+li {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    /* in set to inline, the li elements sit side by side */
+    /* display: inline; */
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+/* decendant selector 
+ footer p {
+    font-size: 16px;
+} */
+
+/* nested decendant selector, not best practices
+  article header p {
+    font-style: italic;
+} */
+/* id selectors need # */
+#author {
+    font-style: italic;
+    font-size: 18px;
+}
+
+#copyright {
+    font-size: 16px;
+}
+
+/* difference between id and class is that you cannot
+repeat id name more than once */
+
+.related-author {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.related {
+    /* remove bullet points from the list */
+    list-style: none;
+    margin-left: 0;
+}
+
+body {
+    background-color: rgb(223, 223, 223);
+}
+
+/* psuedo class :
+ li:first-child {
+    font-weight: bold;
+}
+
+li:last-child {
+    font-style: italic;
+}
+
+li:nth-child(odd){
+color: red;
+}
+li:nth-child(even){
+    color:purple;
+}
+
+ this is a parent element with a decendant selector of p:
+
+article p:last-child {
+    color: green;
+} */
+
+/* styling links psuedo classes  */
+
+/* 
+this is not a good practice, instead style a pseudo class of the anchor,
+allowing you to target different states (will expand later).
+a {
+    color: blue;
+} */
+
+/* this will target all anchor elements that have an href attribute */
+
+/* LVHA 
+L === Link;
+V === visted;
+H === hover;
+A === Active;
+*/
+
+/* MARGIN vs. PADDING === NAV LINKS */
+/* Here we change inline-block */
+
+nav a:link {
+    /* background-color: rgb(255, 0, 0);
+    margin: 25px; */
+    /* margin will put space between elements horizontally due to the 
+    nature of the nav links */
+    /* padding: 10px; */
+    /* padding will overlay and keep the elements in the same space, just
+    expanding the color  */
+    margin-right: 30px;
+    /* margin-top: 10px; */
+    display: inline-block;
+}
+
+nav a:link:last-child {
+    margin-right: 0;
+}
+
+/* box model example of how inline-boxes take up only the space
+need and values like margin do not apply
+top and bottom margins have not changed, only the horizontal
+
+this is because the anchor element displays only horizontally
+
+padding expands the fill of the area, but the content is in the exact same space still
+
+*/
+
+
+/* LIKE BUTTON
+Absolute and Relative positioning 
+*/
+.like-btn {
+    font-size: 25px;
+    color: #0eb5f7;
+    background-color: rgba(255, 255, 255, 0.13);
+    padding: 10px 20px;
+    border: 1px rgba(0, 0, 0, 0.363) solid;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    /* top: 0;
+    left: 0; 
+    will appear on bottom left due to default view port positioning */
+    bottom: 25px;
+    right: 75px;
+
+}
+
+.like-btn:hover {
+    font-size: 27px;
+    padding: 13px 23px;
+    background-color: rgba(255, 255, 255, 0.884);
+    color: #0eb5f7;
+}
+
+/* PSEUDO-ELEMENT */
+
+h1::first-letter {
+    font-style: normal;
+    margin-right: 28px;
+}
+
+/* Paragraph Pseudo-Element first line */
+/* p::first-line {
+    color: red;
+    padding: 10px;
+} */
+
+/*  ::after and before pseudo-elements */
+
+h2 {
+    /* background-color: orange; */
+    position: relative;
+}
+
+h2::after {
+    content: "TOP";
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    background-color: rgb(67, 225, 14);
+    display: inline-block;
+    padding: 3px 6px;
+    position: absolute;
+    top: -9px;
+    right: 680px;
+}
+
+a:link {
+    color: #0eb5f7;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(43, 5, 114);
+}
+
+a:hover {
+    color: #0eb5f7;
+    font-weight: bold;
+    text-decoration: underline #0eb5f7;
+}
+
+a:active {
+    background-color: black;
+    font-style: bold;
+}
+
+/* Images */
+.laura-img {
+    width: 5%;
+    height: auto;
+    margin: 0px 0px 15px 15px;
+}
+
+.post-img {
+    width: 100%;
+    height: auto;
+}
+
+/* conflict resolution */
+/* #ID selector takes priority here and the text will be red */
+/* 
+                 1. hightest priority is #ID select
+                 2. (.)class and (:)pseudo-class selector 
+                 3. lowest priority element selector a, p, li, lu, div, etc.
+*/
+
+
+#copyright {
+    color: rgb(165, 165, 165);
+}
+
+.copyright {
+    color: blueviolet;
+}
+
+.text {
+    color: yellow;
+}
+
+footer p {
+    color: green;
+}
+
+/* Inheritence - decendants and child elements inherit values from parent elements
+    Body element: Parent to all elements, appears at the top, 
+    however it is easily overwritten by child values
+
+    decendants
+    child elements
+    nth-child 
+*/
+
+
+/* -------------------------------------------------------- */
+/* FLOATS */
+
+/* .author-img {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.author {
+    float: left;
+    margin-top: 18px;
+    margin-left: 20px;
+}
+
+h1 {
+    float: left;
+}
+
+nav {
+    float: right;
+} */
+
+
+/* CLEAR A FLOAT NOT BEST PRACTICE */
+/* .clear {
+    clear: both;
+} */
+
+/* clearfix hack for float layout */
+
+/* .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+article {
+    background-color: teal;
+    width: 1125px;
+    float: left;
+}
+
+aside {
+    background-color: green;
+    width: 625px;
+    float: right;
+}
+
+footer {
+    background-color: pink;
+    clear: both;
+} */
+
+
+/* ------------------------------------------ */
+/* FLEXBOX */
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.author-box {
+    display: flex;
+    align-items: center;
+    /* gap: 25px; */
+}
+
+.author {
+    margin-bottom: 0;
+    margin-left: 25px;
+}
+
+.related-post {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.related-author {
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.related-link:link {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+
+    display: block;
+    margin-bottom: 10px;
+}
+
+/*
+.row {
+    display: flex;
+    align-items: flex-start;
+    gap: 75px;
+}
+
+article {
+    flex: 1;
+    margin-bottom: o;
+}
+
+aside {
+    flex: 0 0 425px;
+    margin-top: 150px;
+} */
+
+
+
+/* CSS GRID LAYOUT */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    grid-template-rows: 1fr;
+    gap: 25px;
+    row-gap: 60px;
+    /* Fixed Related post height length */
+    align-items: start;
+}
+
+.main-header {
+    grid-column: 1 / -1;
+
+}
+
+footer {
+    grid-column: 1 / -1;
+
+}
